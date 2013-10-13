@@ -5,6 +5,21 @@
 @import url(https://fonts.googleapis.com/css?family=Cantora+One);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
+@-webkit-keyframes pulse {
+    0%      {opacity: 0.7;}
+    25%     {opacity: 1;}
+    50% 	{opacity: .7;}
+    75% 	{opacity: .4;}
+    100% 	{opacity: .7;}
+}
+@keyframes pulse {
+    0%      {opacity: 0.7;}
+    25%     {opacity: 1;}
+    50% 	{opacity: .7;}
+    75% 	{opacity: .4;}
+    100% 	{opacity: .7;}
+}
+
 body {
 	background-image: url(../img/sandpaper.png);
 	font-family: 'Open Sans', sans-serif;
@@ -33,14 +48,11 @@ header img {
 	height: 60px;
 	float: right;
 	opacity: .7;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	transition: all 0.2s ease;    
 }
 
 header img:hover {
+	-webkit-animation: pulse 3s infinite;
+	animation: pulse 3s infinite;
 	opacity: 1;
 }
 
@@ -48,20 +60,31 @@ figure {
 	display: inline-block;
 	padding: 10px;
 	background-color: #FFF;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	transition: all 0.2s ease;    
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;    
 }
 
 figure:hover {
 	box-shadow: 2px 2px 6px #555;
-	-webkit-transform: scale(1.5);
-	-moz-transform: scale(1.5);
-	-o-transform: scale(1.5);
-	-ms-transform: scale(1.5);
-	transform: scale(1.5);  
+}
+
+figure.even:hover {
+	-webkit-transform: scale(1.5) rotate(10deg);
+	-moz-transform: scale(1.5) rotate(10deg);
+	-o-transform: scale(1.5) rotate(10deg);
+	-ms-transform: scale(1.5) rotate(10deg);
+	transform: scale(1.5) rotate(10deg);
+}
+
+figure.odd:hover {
+	-webkit-transform: scale(1.5) rotate(-10deg);
+	-moz-transform: scale(1.5) rotate(-10deg);
+	-o-transform: scale(1.5) rotate(-10deg);
+	-ms-transform: scale(1.5) rotate(-10deg);
+	transform: scale(1.5) rotate(-10deg);
 }
 
 figcaption {
@@ -79,9 +102,12 @@ figure img {
 footer {
 	padding: 10px;
 	margin-top: 60px;
+}
+
+footer a {
 	opacity: .7;
 }
 
-footer:hover {
-	opacity: 1;
+footer a:hover {
+	opacity: 1; 
 }
